@@ -23,7 +23,7 @@ Puedes usar cualquier lenguaje de programación y marco de trabajo (framework) d
 
 A continuación, algunas restricciones que debería seguir:
 
-- Deber usar JWT (JSON Web Token) para proteger los puntos finales (endpoints) e identificar al solicitante.
+- Debes usar JWT (JSON Web Token) para proteger los puntos finales (endpoints) e identificar al solicitante.
 - Para las diferentes categorías de gastos, puedes usar la siguiente lista (eres libre para decidir como implementar esto como parte de tu modelo de datos):
     - Comestibles.
     - Ocio.

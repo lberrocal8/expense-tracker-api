@@ -1,0 +1,565 @@
+{
+    "modelName": "expenseDb-model",
+    "collections": [
+        {
+            "collectionName": "User",
+            "type": "object",
+            "properties": [
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "f49fd1ab-d959-4996-9930-52803453adfb",
+                    "name": "userName",
+                    "required": true,
+                    "error": {},
+                    "childRelationships": [
+                        "b7daf165-c9a9-48b5-a288-d794a3ea8159"
+                    ]
+                },
+                {
+                    "name": "email",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "e251a966-c31b-4b59-af74-38b28522d18d",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "password",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "fac29f1d-a9e3-4363-a714-0c67987ad682",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "roles",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "array",
+                    "properties": [
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "423adcd1-0f19-4da1-a61e-d1fbb1c12df0",
+                            "arrayItem": true,
+                            "displayName": "user",
+                            "error": {}
+                        }
+                    ],
+                    "additionalItems": false,
+                    "GUID": "28c3371c-ae0b-4a51-b6b7-13ae48ac28f1",
+                    "required": true,
+                    "quantification": {
+                        "GUID": "8d0381a1-25ae-4b27-9064-cf2f9bc60060",
+                        "minUnit": "single",
+                        "likelyUnit": "single",
+                        "maxUnit": "single"
+                    },
+                    "uniqueItems": true,
+                    "error": {}
+                },
+                {
+                    "name": "isActive",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "boolean",
+                    "GUID": "c9355b02-08fa-4f9b-b4fd-f26123f736cd",
+                    "required": true,
+                    "default": "true",
+                    "error": {}
+                },
+                {
+                    "name": "createdAt",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "date",
+                    "primaryKey": false,
+                    "GUID": "b1672fe9-8272-4348-96ec-0cd0542e1293",
+                    "required": true,
+                    "now": true,
+                    "error": {}
+                },
+                {
+                    "name": "updatedAt",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "date",
+                    "primaryKey": false,
+                    "GUID": "45fd3bb2-f35f-4941-9831-d0608cd9711a",
+                    "required": true,
+                    "now": true,
+                    "error": {}
+                },
+                {
+                    "name": "tokens",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "array",
+                    "properties": [
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "8de08de2-2b7c-4b55-9c98-73f3465d458d",
+                            "arrayItem": true,
+                            "displayName": "token",
+                            "error": {}
+                        },
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "date",
+                            "primaryKey": false,
+                            "GUID": "81a3f5d8-2adc-4c7f-b526-b2da48cd889c",
+                            "arrayItem": true,
+                            "displayName": "expiresAt",
+                            "error": {}
+                        }
+                    ],
+                    "additionalItems": false,
+                    "primaryKey": false,
+                    "required": true,
+                    "GUID": "bf420683-a194-420e-bbe8-148716eca9d8",
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "58b67b25-8ba3-4101-95b7-45b56cd29acb"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "3fc78eac-0288-4489-9003-a80d8be238fe",
+            "bucketId": "a06fe6a5-9ef8-418c-aa34-aaa256b3fbe9"
+        },
+        {
+            "collectionName": "Expense",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "nameExpense",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "27e405ee-8f03-4377-b6e0-1f7091405da7",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "amount",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "numeric",
+                    "required": true,
+                    "GUID": "ce61cd46-1320-4f5f-bae3-46151836e37a",
+                    "mode": "double",
+                    "error": {}
+                },
+                {
+                    "name": "categorie",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "array",
+                    "properties": [
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "39b1de08-f881-4585-b948-7d876190199c",
+                            "arrayItem": true,
+                            "displayName": "groceries",
+                            "error": {}
+                        },
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "94d8eec3-5ab5-41f2-9c75-f2600e73bdde",
+                            "arrayItem": true,
+                            "displayName": "leisure",
+                            "error": {}
+                        },
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "cc399ca6-e9e0-4507-b275-62561febfae7",
+                            "arrayItem": true,
+                            "displayName": "electronics",
+                            "error": {}
+                        },
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "1156642c-06b4-4483-ab66-603315d568b4",
+                            "arrayItem": true,
+                            "displayName": "utilities",
+                            "error": {}
+                        },
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "632f99c0-0c52-4a00-a56a-4fbb6e836dd4",
+                            "arrayItem": true,
+                            "displayName": "clothing",
+                            "error": {}
+                        },
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "45aecac3-5936-4460-902e-ecef7ab1e276",
+                            "arrayItem": true,
+                            "displayName": "health",
+                            "error": {}
+                        },
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "426516ec-e832-4f41-89a7-a937e6961447",
+                            "arrayItem": true,
+                            "displayName": "education",
+                            "error": {}
+                        },
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "7d8462a9-b797-4a60-ac5f-674d070e12e6",
+                            "arrayItem": true,
+                            "displayName": "transport",
+                            "error": {}
+                        },
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "30a4ec83-6ae3-4b06-ac3d-7adeb9c92325",
+                            "arrayItem": true,
+                            "displayName": "others",
+                            "error": {}
+                        }
+                    ],
+                    "additionalItems": false,
+                    "GUID": "d3f1a43b-faf8-4ab1-bf81-18d2c7e9cd49",
+                    "required": true,
+                    "uniqueItems": true,
+                    "error": {}
+                },
+                {
+                    "name": "paymentType",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "array",
+                    "properties": [
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "247d4cc6-efe4-4311-9c7d-f3911b1a7155",
+                            "arrayItem": true,
+                            "displayName": "cash",
+                            "error": {}
+                        },
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "27f4219c-6a79-4c1b-90b4-d178e3b536b0",
+                            "arrayItem": true,
+                            "displayName": "card",
+                            "error": {}
+                        }
+                    ],
+                    "additionalItems": false,
+                    "GUID": "70f02d3e-b67d-48b4-b090-7646664bb6be",
+                    "required": true,
+                    "uniqueItems": true,
+                    "error": {}
+                },
+                {
+                    "name": "currency",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "array",
+                    "properties": [
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "d616398f-3c1f-436f-a01d-cd359779c52e",
+                            "arrayItem": true,
+                            "displayName": "dollar",
+                            "error": {}
+                        },
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "5b46c397-3f00-4533-8986-48355b7f7c00",
+                            "arrayItem": true,
+                            "displayName": "euro",
+                            "error": {}
+                        }
+                    ],
+                    "additionalItems": false,
+                    "GUID": "5ff3a053-30e2-4cd5-ae61-4692bbe4f452",
+                    "uniqueItems": true,
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "296335d9-1c92-4ad9-a98d-4d2b6e5fc43c",
+                    "required": true,
+                    "foreignCollection": "3fc78eac-0288-4489-9003-a80d8be238fe",
+                    "foreignField": [
+                        "3fc78eac-0288-4489-9003-a80d8be238fe",
+                        "f49fd1ab-d959-4996-9930-52803453adfb"
+                    ],
+                    "relationshipType": "Foreign Key",
+                    "parentRelationship": "b7daf165-c9a9-48b5-a288-d794a3ea8159",
+                    "name": "userName",
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "bc903f7c-811e-4362-8864-886d08ab0c78"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "00ec949b-83d6-490e-b7d9-54c1280b4731",
+            "bucketId": "a06fe6a5-9ef8-418c-aa34-aaa256b3fbe9"
+        }
+    ],
+    "buckets": [
+        {
+            "name": "expense-tracker-api",
+            "type": "bucket",
+            "collectionIds": [
+                "3fc78eac-0288-4489-9003-a80d8be238fe",
+                "00ec949b-83d6-490e-b7d9-54c1280b4731"
+            ],
+            "backgroundColor": {
+                "r": 216,
+                "g": 0,
+                "b": 115,
+                "a": 1
+            },
+            "show": true,
+            "isActivated": true,
+            "GUID": "a06fe6a5-9ef8-418c-aa34-aaa256b3fbe9"
+        }
+    ],
+    "views": [],
+    "relationships": [
+        {
+            "name": "fk_User.userName_to_Expense.username",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "3fc78eac-0288-4489-9003-a80d8be238fe",
+                    "f49fd1ab-d959-4996-9930-52803453adfb"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "00ec949b-83d6-490e-b7d9-54c1280b4731",
+                    "296335d9-1c92-4ad9-a98d-4d2b6e5fc43c"
+                ]
+            ],
+            "isActivated": true,
+            "childCardinality": "1",
+            "GUID": "b7daf165-c9a9-48b5-a288-d794a3ea8159",
+            "parentCollection": "3fc78eac-0288-4489-9003-a80d8be238fe",
+            "childCollection": "00ec949b-83d6-490e-b7d9-54c1280b4731",
+            "hackoladeStyles": {
+                "GUID": "e9210faf-d3ce-4f0f-97da-e37de3e14822",
+                "autoPositioning": false,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1588.5,
+                        "y": 985
+                    },
+                    {
+                        "x": 1588.5,
+                        "y": 1003
+                    },
+                    {
+                        "x": 1302,
+                        "y": 1003
+                    },
+                    {
+                        "x": 1302,
+                        "y": 820
+                    }
+                ],
+                "sides": [
+                    "bottom",
+                    "bottom"
+                ]
+            }
+        }
+    ],
+    "users": [],
+    "diagramViews": [],
+    "idToNameHashTable": {
+        "a06fe6a5-9ef8-418c-aa34-aaa256b3fbe9": "expense-tracker-api",
+        "3fc78eac-0288-4489-9003-a80d8be238fe": "User",
+        "f49fd1ab-d959-4996-9930-52803453adfb": "userName",
+        "e251a966-c31b-4b59-af74-38b28522d18d": "email",
+        "fac29f1d-a9e3-4363-a714-0c67987ad682": "password",
+        "28c3371c-ae0b-4a51-b6b7-13ae48ac28f1": "roles",
+        "c9355b02-08fa-4f9b-b4fd-f26123f736cd": "isActive",
+        "b1672fe9-8272-4348-96ec-0cd0542e1293": "createdAt",
+        "45fd3bb2-f35f-4941-9831-d0608cd9711a": "updatedAt",
+        "bf420683-a194-420e-bbe8-148716eca9d8": "tokens",
+        "00ec949b-83d6-490e-b7d9-54c1280b4731": "Expense",
+        "27e405ee-8f03-4377-b6e0-1f7091405da7": "nameExpense",
+        "ce61cd46-1320-4f5f-bae3-46151836e37a": "amount",
+        "14ec6a4e-7f35-4905-81c4-71ce9bb87b65": "createdAt",
+        "d3f1a43b-faf8-4ab1-bf81-18d2c7e9cd49": "categorie",
+        "70f02d3e-b67d-48b4-b090-7646664bb6be": "paymentType",
+        "b7daf165-c9a9-48b5-a288-d794a3ea8159": "fk_User.userName_to_Expense.username",
+        "296335d9-1c92-4ad9-a98d-4d2b6e5fc43c": "userName",
+        "5ff3a053-30e2-4cd5-ae61-4692bbe4f452": "currency"
+    },
+    "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "3dfc3fbb-30d1-4c75-b51d-5fba5444afa7"
+    },
+    "polyglotDefinitions": {
+        "type": "polyglotDefinitions",
+        "properties": [],
+        "GUID": "67634933-3fcd-4987-8819-dc3f25859df2"
+    },
+    "externalDefinitions": {
+        "type": "externalDefinitions",
+        "properties": [],
+        "GUID": "80dffe75-bbba-4c78-b278-808424bc961c"
+    },
+    "sources": [],
+    "decorativeSymbols": [],
+    "dbVersion": "v7.x",
+    "dbVendor": "MongoDB",
+    "appTarget": "MONGODB",
+    "creationTS": "2024-08-21T18:39:49.323Z",
+    "GUID": "df6d542d-78e9-4cc2-a3b3-21ffe4387ed9",
+    "isLineageEnabled": false,
+    "hackoladeMeta": {
+        "validationErrors": {
+            "modelName": false
+        }
+    },
+    "lastModifTS": "2024-08-21T19:13:37.257Z",
+    "persistenceSchemaVersion": "7",
+    "isCreatedByPlugin": true,
+    "pluginInformation": {
+        "pluginEngineVersion": "1.0.0"
+    },
+    "applicationInformation": {
+        "version": "7.7.4"
+    },
+    "settings": {
+        "centralPane": {
+            "dbLevel": {
+                "erd": [
+                    {
+                        "GUID": "3fc78eac-0288-4489-9003-a80d8be238fe",
+                        "x": 1181,
+                        "y": 589,
+                        "width": 242,
+                        "height": 231,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "00ec949b-83d6-490e-b7d9-54c1280b4731",
+                        "x": 1456,
+                        "y": 592,
+                        "width": 265,
+                        "height": 393,
+                        "color": {}
+                    }
+                ],
+                "erdDefinitions": {
+                    "erd": [],
+                    "rootPath": [],
+                    "entities": [],
+                    "decorativeSymbols": []
+                },
+                "buckets": [
+                    {
+                        "x": 1141,
+                        "y": 549,
+                        "GUID": "a06fe6a5-9ef8-418c-aa34-aaa256b3fbe9"
+                    }
+                ],
+                "collapsedNodes": [],
+                "activeRelationship": "",
+                "activeRelationshipFields": {
+                    "childField": [],
+                    "parentField": []
+                },
+                "selectedCollections": [],
+                "displayColorPicker": false,
+                "graphView": {
+                    "erd": [],
+                    "buckets": [],
+                    "decorativeSymbols": [],
+                    "forceLayout": true,
+                    "defaultLinkLength": 300
+                },
+                "diagramViews": [],
+                "decorativeSymbols": [],
+                "nestedCollectionsLayout": "horizontal",
+                "options": [],
+                "relationshipUpdateDisabled": false
+            },
+            "collectionLevel": {},
+            "changed": false
+        },
+        "dtDiagram": {
+            "collapsedNodes": [],
+            "shouldDistributeCollections": false
+        }
+    }
+}
