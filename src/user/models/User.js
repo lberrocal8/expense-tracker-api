@@ -5,7 +5,6 @@ const userSchema = new Schema({
     username: { type: Schema.Types.String, required: true, unique: true },
     email: { type: Schema.Types.String, required: true, unique: true },
     password: { type: Schema.Types.String, required: true },
-    roles: { type: Schema.Types.String, default: 'user' },
     isActive: { type: Schema.Types.Boolean, default: true },
     updatedAt: { type: Schema.Types.Date, default: Date.now }
 },
